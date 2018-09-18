@@ -6,7 +6,7 @@ Calender
  開発人員
  =============
 
-3人 
+5人 
 
 
 チームリーダー
@@ -19,6 +19,8 @@ Calender
  =============
  Chu Ho Jin
  Yoon Gun Hee
+ Park Un Chae
+ Lee Sang Gin
  
 開発期間
  =============
