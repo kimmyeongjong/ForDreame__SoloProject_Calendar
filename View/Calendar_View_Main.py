@@ -10,6 +10,8 @@ define main frame and framework
 from tkinter import *
 from tkinter import ttk
 
+from Controller import temp
+
 
 class App_Main_View:
     def __init__(self,parent):
@@ -42,11 +44,11 @@ class App_Main_View:
         # right frame       function navigation, wheather
 
         self.right_top_frame = Frame(self.right_frame_nav, background="green", height=100, width=190)
-        self.right_top_frame.pack(side=TOP)
+        self.right_top_frame.pack(side=TOP ,fill=BOTH)
         # right top frame   function/ weather
 
-        self.right_bottom_frame = Frame(self.right_frame_nav, background="yellow", height=600, width=190)
-        self.right_bottom_frame.pack(side=BOTTOM)
+        self.right_bottom_frame = Frame(self.right_frame_nav, background="yellow", height=680, width=190)
+        self.right_bottom_frame.pack(side=BOTTOM ,fill=BOTH)
         # right bottom frame    function navigation
 
         # self.right_bottom_Dday = Frame(self.right_bottom_frame, background="red", height=280, width=180)
@@ -60,8 +62,11 @@ class App_Main_View:
         # main frame        function calendar
 
         self.main_frame_view_month = Frame(self.main_frame_calendar, background = "white", height=100, width=980)
-        self.main_frame_view_month.pack(side=TOP)
+        self.main_frame_view_month.pack(side=TOP, fill=BOTH)
         # main frame top    function view month
+
+        self.label_month = Label(self.main_frame_view_month, background = "white", height=2, width=20 ,text=str(temp.date_test_year)+"년 "+str(temp.date_test_month)+"월" ,font = "Helvetica 30 bold italic")
+        self.label_month.pack(side=TOP)
 
         self.main_frame_view_day = Frame(self.main_frame_calendar, background = "gray", height=580, width=980)
         self.main_frame_view_day.pack(side=BOTTOM)
@@ -69,11 +74,12 @@ class App_Main_View:
 
         #--------------------delete-----------------------
         # font = font.Font()
-        #-----------------------------------------------
+        #-------------------------------------------------
 
         for i in range(0,6):
             for j in range(0,7):
-                self.button_main = Button(self.main_frame_view_day, width=6, height=2, background="gray24" ,foreground="yellow",text=str(i),  font = "Helvetica 25 bold italic").grid(row = i, column = j)
+
+                self.button_main = Button(self.main_frame_view_day, width=6, height=2, background="gray24" ,foreground="yellow",text=","+str(temp.date_test_start_point),  font = "Helvetica 25 bold italic").grid(row = i, column = j)
 
         self.main_frame.pack()
 
